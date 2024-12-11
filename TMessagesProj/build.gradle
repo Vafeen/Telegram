@@ -76,11 +76,6 @@ android {
         }
     }
 
-    lintOptions {
-        disable 'MissingTranslation'
-        disable 'ExtraTranslation'
-        disable 'BlockedPrivateApi'
-    }
 
     dexOptions {
         jumboMode = true
@@ -192,6 +187,9 @@ android {
         }
     }
     namespace 'org.telegram.messenger'
+    lint {
+        disable 'MissingTranslation', 'ExtraTranslation', 'BlockedPrivateApi'
+    }
 }
 
 

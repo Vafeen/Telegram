@@ -31,11 +31,6 @@ android {
 
     sourceSets.main.jniLibs.srcDirs = ['../TMessagesProj/jni/']
 
-    lintOptions {
-        disable 'MissingTranslation'
-        disable 'ExtraTranslation'
-        disable 'BlockedPrivateApi'
-    }
 
     dexOptions {
         jumboMode = true
@@ -148,10 +143,11 @@ android {
         buildConfig = true
     }
     namespace 'org.telegram.messenger.web'
-
-    lintOptions {
+    lint {
         checkReleaseBuilds false
+        disable 'MissingTranslation', 'ExtraTranslation', 'BlockedPrivateApi'
     }
+
 }
 
 apply plugin: 'com.google.gms.google-services'
